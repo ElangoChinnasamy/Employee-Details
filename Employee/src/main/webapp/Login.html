@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myLogin">
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<script src="Angularjs/angular.min.js"></script>
+<script src="LoginController.js"></script>
+<script src="Angularjs/angular-route.min.js"></script>
+</head>
+<body>
+
+<div class="container" ng-controller="LoginController as login">
+	<h1>User Login</h1><br>
+
+	 <form name="loginForm" class="form-horizontal" role="form" ng-submit="loginForm.$valid && login.doLogin()" novalidate>
+		
+		
+		<div class="form-group">
+			<label for="inputusername" class="col-sm-2 control-label">UserName</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" placeholder="username" name="username" autofocus="autofocus" ng-model="login.employeemodel.username" required ng-pattern="/^\w+@\w+\.\w{2,3}$/"> <span ng-show="loginForm.username.$error.pattern"> Invalid Email Address!</span>
+			
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="inputPassword" class="col-sm-2 control-label">Password
+			</label>
+			<div class="col-sm-6">
+				<input type="password" class="form-control" placeholder="Password" name="password" ng-model="login.employeemodel.password" required ng-minlength="6" ng-maxlength="10" maxlength="10"><span ng-show="loginForm.password.$error.minlength || loginForm.password.$error.maxlength">The input characters must be in range 6 to 10!</span>
+					
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-2">
+			
+				<button type="submit" class="btn btn-default">Login</button>
+				
+				
+				<!-- <button type="submit" class="btn btn-default">Register</button> -->
+			</div>
+		</div>
+		
+		
+	</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="myLogin">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Page</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<script src="Angularjs/angular.min.js"></script>
+<script src="Angularjs/angular-route.min.js"></script>
+ <script src="RegisterController.js"></script>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+	<form ng-controller="userCtrl" class="form-horizontal"
+		ng-submit="submit()">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">User Name:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="username" required name="username"
+					placeholder="username"> <span style="color: red"
+					ng-show="myForm.username.$dirty && myForm.username.$invalid">
+					<span ng-show="myForm.username.$error.required">UserName
+						is required.</span>
+				</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password:</label>
+			<div class="col-sm-10">
+				<input type="password" ng-model="password" required name="password"
+					placeholder="password"> <span style="color: red"
+					ng-show="myForm.password.$dirty && myForm.password.$invalid">
+					<span ng-show="myForm.password.$error.required">Password is
+						required.</span>
+				</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">TempPassword:</label>
+			<div class="col-sm-10">
+				<input type="password" ng-model="temp_password" required name="temp_password"
+					placeholder="temp_password"> <span style="color: red"
+					ng-show="myForm.temp_password.$dirty && myForm.temp_password.$invalid">
+					<span ng-show="myForm.temp_password.$error.required">TempPassword is
+						required.</span>
+				</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Email Address:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="email_address" required name="email_address"
+					placeholder="email_address"> <span style="color: red"
+					ng-show="myForm.email_address.$dirty && myForm.email_address.$invalid"> <span
+					ng-show="myForm.email_address.$error.required">Email is required.</span> <span
+					ng-show="myForm.email_address.$error.email">Invalid email address.</span></span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">First Name:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="first_name" required name="first_name"
+					placeholder="firstname"> <span style="color: red"
+					ng-show="myForm.first_name.$dirty && myForm.first_name.$invalid"></span>
+				<span ng-show="myForm.first_name.$error.required">FirstName is
+					required.</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Last Name:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="last_name" required name="last_name"
+					placeholder="lastname"> <span style="color: red"
+					ng-show="myForm.last_name.$dirty && myForm.last_name.$invalid"></span>
+				<span ng-show="myForm.last_name.$error.required">LastName
+					is required.</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">DOB:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="dob" required placeholder="dob" name="dob">
+				<span style="" ng-show="myForm.dob.$dirty && myForm.dob.$invalid"></span>
+				<span ng-show="myForm.dob.$error.required">DOB is Required.</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">AGE:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="age" required placeholder="age" name="age">
+				<span style="" ng-show="myForm.age.$dirty && myForm.age.$invalid"></span>
+				<span ng-show="myForm.age.$error.required">Age is Required.</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">SEX:</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="sex" required placeholder="sex" name="sex">
+				<span style="" ng-show="myForm.sex.$dirty && myForm.sex.$invalid"></span>
+				<span ng-show="myForm.sex.$error.required">Sex is Required.</span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Register</button>
+		</div>
+			</div>
+			</form>
+
+</body>
+</html>
